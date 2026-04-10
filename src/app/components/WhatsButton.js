@@ -22,7 +22,7 @@ export default function WhatsButton({ onOpenModal }) {
                 </svg>
 
                 {/* Tooltip no hover (opcional) */}
-                <span className="absolute right-full mr-3 bg-white text-[#003366] text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-sm shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap border-b-2 border-[#ffd700]">
+                <span className="absolute right-full mr-3 bg-white text-black text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-sm shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap border-b-2 border-orange-400">
                     Fale com um Especialista
                     <span className="absolute top-1/2 -right-1 -translate-y-1/2 border-4 border-transparent border-l-white"></span>
                 </span>

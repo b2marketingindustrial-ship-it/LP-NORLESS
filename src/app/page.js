@@ -2,11 +2,13 @@
 import { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Solution from './components/Solution';
-import ProductCards from './components/ProductCards';
+import ProductCarousels from './components/ProductCarousels';
+import WhyParker from './components/WhyParker';
 import Segments from './components/Segments';
 import Consultative from './components/Consultative';
+import WhyNorless from './components/WhyNorless';
 import FinalCTA from './components/FinalCTA';
+import Solution from './components/Solution';
 import ModalForm from './components/ModalForm';
 import Footer from './components/Footer';
 import WhatsButton from './components/WhatsButton';
@@ -20,18 +22,20 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <Header onOpenModal={openModal} />
-      
+
       <main>
         <Hero onOpenModal={openModal} />
-        <ProductCards onOpenModal={openModal} />
-        <Solution  />
-        <Segments onOpenModal={openModal} />
+        <ProductCarousels />
+        <WhyParker />
+        <Segments />
         <Consultative onOpenModal={openModal} />
-        <FinalCTA onOpenModal={openModal} />
+        <WhyNorless />
+        <FinalCTA />
+        <Solution />
       </main>
-      
-      <Footer onOpenModal={openModal} />
-      
+
+      <Footer />
+
       <ModalForm isOpen={isModalOpen} onClose={closeModal} />
       <WhatsButton onOpenModal={openModal} />
     </div>

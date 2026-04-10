@@ -40,7 +40,7 @@ export default function ModalForm({ isOpen, onClose }) {
                 event_type: "CONVERSION",
                 event_family: "CDP",
                 payload: {
-                    conversion_identifier: " [B2] MODAL FORM WORTEC",
+                    conversion_identifier: " [B2] MODAL NORLESS PARKER VALVULAS",
 
                     name: formData.name,
                     email: formData.email,
@@ -81,9 +81,7 @@ export default function ModalForm({ isOpen, onClose }) {
             setsucessMsg(true);
             console.log(`Lead enviado com os dados de utm ${utmData}`, result);
 
-            const whatsMsg = `Olá, gostaria de falar com um especialista da Realiza Car. Meu nome 
-                é ${formData.name} e estou interessado no produto ${formData.product}. 
-                Poderiam me ajudar?.`;
+            const whatsMsg = `Olá, gostaria de falar com um especialista da Norless sobre válvulas pneumáticas Parker. Meu nome é ${formData.name} e estou interessado em ${formData.product}. Poderiam me ajudar?`;
 
             const whatsNumber = '11984471850';
 
@@ -121,9 +119,16 @@ export default function ModalForm({ isOpen, onClose }) {
                 <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl transform transition-all">
 
                     {/* Header */}
-                    <div className="relative bg-green-600 rounded-t-2xl p-6 shadow-lg">
-                        <h2 className="text-2xl md:text-3xl font-bold text-white">Entre em contato</h2>
-                        <p className="text-white text-sm mt-1">Preencha os campos abaixo para iniciar a conversa no WhatsApp</p>
+                    <div className="relative bg-[#003366] rounded-t-2xl p-6 shadow-lg border-b-4 border-yellow-400">
+                        <h2 className="text-2xl md:text-3xl font-bold text-white">
+                            Solicite sua <span className="text-yellow-400">cotação</span>
+                        </h2>
+                        <p className="text-white/90 text-sm mt-1">
+                            <span className="text-orange-400 font-semibold">Norless</span>
+                            <span className="text-white/80"> · </span>
+                            <span className="text-yellow-400">Válvulas pneumáticas Parker</span>
+                            <span className="text-white/80"> — retornamos pelo WhatsApp</span>
+                        </p>
                         <button
                             onClick={onClose}
                             className="absolute top-6 right-6 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-xl p-2 transition-all duration-300"
@@ -144,9 +149,9 @@ export default function ModalForm({ isOpen, onClose }) {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
-                                <h3 className="text-2xl font-bold text-slate-900 mb-2">Solicitação Enviada!</h3>
-                                <p className="text-slate-500 mb-4">Obrigado pelo contato, <span className="font-semibold text-orange-500">{formData.name}</span>.</p>
-                                <p className="text-sm text-slate-400">Nossa equipe retornará em breve.</p>
+                                <h3 className="text-2xl font-bold text-black mb-2">Solicitação Enviada!</h3>
+                                <p className="text-neutral-900 mb-4">Obrigado pelo contato, <span className="font-semibold text-orange-400">{formData.name}</span>.</p>
+                                <p className="text-sm text-black/55">Nossa equipe retornará em breve.</p>
                             </div>
                         ) : (
                             <form onSubmit={handleSubmit} className="space-y-5">
@@ -156,7 +161,7 @@ export default function ModalForm({ isOpen, onClose }) {
                                         value={formData.name}
                                         placeholder="Nome"
                                         required
-                                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0082ca]"
+                                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-black placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-400"
                                         onChange={handleChange}
                                     />
 
@@ -165,16 +170,16 @@ export default function ModalForm({ isOpen, onClose }) {
                                         value={formData.company}
                                         placeholder="Empresa"
                                         required
-                                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0082ca]"
+                                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-black placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-400"
                                         onChange={handleChange}
                                     />
 
                                     <input
                                         name="product"
                                         value={formData.product}
-                                        placeholder="Qual seu equipamento de interesse"
+                                        placeholder="Produto ou linha de interesse (ex.: válvulas direcionais)"
                                         required
-                                        className="sm:col-span-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0082ca]"
+                                        className="sm:col-span-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-black placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-400"
                                         onChange={handleChange}
                                     />
 
@@ -184,7 +189,7 @@ export default function ModalForm({ isOpen, onClose }) {
                                         value={formData.email}
                                         placeholder="Email"
                                         required
-                                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0082ca]"
+                                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-black placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-400"
                                         onChange={handleChange}
                                     />
 
@@ -193,23 +198,23 @@ export default function ModalForm({ isOpen, onClose }) {
                                         value={formData.phone}
                                         placeholder="Telefone"
                                         required
-                                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0082ca]"
+                                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-black placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-400"
                                         onChange={handleChange}
                                     />
                                 </div>
 
                                 <div className="flex items-start gap-2">
                                     <input type="checkbox" id="consent" required className="mt-1 w-4 h-4 text-orange-500 border-gray-300 rounded focus:ring-orange-400" />
-                                    <label htmlFor="consent" className="text-sm text-slate-500">
+                                    <label htmlFor="consent" className="text-sm text-neutral-900">
                                         Concordo em receber comunicações e estou ciente da{' '}
-                                        <a href="#" className="text-green-600">Política de Privacidade</a>
+                                        <a href="#" className="text-orange-400 font-semibold hover:text-yellow-500">Política de Privacidade</a>
                                     </label>
                                 </div>
 
                                 <div className="flex flex-col sm:flex-row gap-3 pt-4">
                                     <button type="submit" disabled={loading} className="flex-1 
-                    bg-green-600 text-white 
-                    font-extrabold text-base md:text-lg tracking-tight py-4 rounded-xl transition-all duration-300 hover:scale-[1.02]">
+                    bg-yellow-400 text-black 
+                    font-extrabold text-base md:text-lg tracking-tight py-4 rounded-xl transition-all duration-300 hover:bg-orange-400 hover:scale-[1.02]">
                                         {loading ? "Enviando..." : "Enviar Solicitação"}
                                     </button>
                                     <p className="text-xs text-slate-400 text-center flex items-center justify-center gap-1">

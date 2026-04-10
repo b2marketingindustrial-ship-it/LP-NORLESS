@@ -5,8 +5,6 @@ const nextConfig = {
 
   output: 'export',
   trailingSlash: true,
-  basePath: '/lp/bombasindustriais',
-  assetPrefix: '/lp/bombasindustriais/',
 
   images: {
     unoptimized: true,
@@ -17,7 +15,7 @@ const nextConfig = {
   },
 
   experimental: {
-    optimizePackageImports: ['framer-motion', 'swiper'],
+    optimizePackageImports: ['framer-motion'],
   },
 };
 

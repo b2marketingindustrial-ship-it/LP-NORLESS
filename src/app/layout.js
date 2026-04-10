@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Wortec Compressores Industriais",
-  description: "Wortec Compressores - Soluções em ar comprimido",
+  title: "Norless · Válvulas pneumáticas Parker",
+  description:
+    "Soluções em válvulas pneumáticas Parker na Norless. Desempenho e confiabilidade para automação industrial.",
 };
 
 export default function RootLayout({ children }) {
