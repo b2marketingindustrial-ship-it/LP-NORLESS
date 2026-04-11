@@ -138,13 +138,13 @@ export default function ChatForm() {
 
   return (
     <div className="bg-white rounded-2xl shadow-xl border flex flex-col h-[480px] overflow-hidden">
-      <div className="bg-[#004a99] px-5 py-4 flex items-center gap-3">
+      <div className="bg-yellow-500 px-5 py-4 flex items-center gap-3">
         <div className="w-9 h-9 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
           <span className="text-black font-bold text-sm">N</span>
         </div>
         <div>
-          <p className="text-white font-semibold text-sm">Especialista Norless</p>
-          <p className="text-orange-400 text-xs font-medium">Responde em minutos</p>
+          <p className="text-black font-semibold text-sm">Especialista Norless</p>
+          <p className="text-black text-xs font-medium">Responde em minutos</p>
         </div>
         <div className="ml-auto flex items-center gap-1.5">
           <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />

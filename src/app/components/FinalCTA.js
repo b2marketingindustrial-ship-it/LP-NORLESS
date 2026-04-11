@@ -18,9 +18,6 @@ export default function FinalCTA() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto text-center"
         >
-          <span className="text-orange-400 font-black tracking-[0.4em] text-[10px] uppercase mb-5 block">
-            CTA final
-          </span>
           <h2 className="text-3xl md:text-5xl font-black text-black mb-6 leading-[1.1] tracking-tighter uppercase">
             Solicite seu orçamento personalizado para{' '}
             <span className="text-yellow-400 font-black">válvulas pneumáticas </span>

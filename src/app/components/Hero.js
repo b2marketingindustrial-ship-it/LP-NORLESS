@@ -5,9 +5,9 @@ import ChatForm from './ChatForm';
 
 export default function Hero({ onOpenModal }) {
   return (
-    <section id="hero" className="relative min-h-[70vh] flex items-center pt-28 pb-12 overflow-hidden bg-[#003366]">
+    <section id="hero" className="relative min-h-[70vh] flex items-center pt-28 pb-12 overflow-hidden bg-black">
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#003366] via-[#003366]/80 to-[#003366]/50 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-neutral-900 to-yellow-500/30 z-10" />
         <Image
           src="/painImg.png"
           alt="Automação pneumática industrial"
@@ -26,10 +26,13 @@ export default function Hero({ onOpenModal }) {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-block px-4 py-1 mb-6 text-[10px] font-black tracking-[0.4em] uppercase bg-yellow-400 text-black rounded-sm">
-              Norless · Parker
+              NORLESS · PARKER
             </span>
 
-            <h1 className="text-4xl md:text-5xl lg:text-[46px] font-black leading-[1.08] mb-6 tracking-tighter uppercase text-white">
+            <h1 className="text-4xl md:text-5xl 
+            lg:text-[46px] font-black 
+            leading-[1.08] mb-6 
+            tracking-tighter uppercase text-white">
               Soluções em{' '}
               <span className="text-yellow-400">válvulas pneumáticas </span>
               <span className="text-orange-400">Parker</span>

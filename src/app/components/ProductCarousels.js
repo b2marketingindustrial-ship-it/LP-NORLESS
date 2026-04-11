@@ -36,7 +36,12 @@ function CategoryCarousel({ title, description, categoryUrl, slides, slideDelay 
             href={categoryUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 self-start lg:self-auto px-6 py-3.5 bg-[#003366] text-white font-black text-[10px] md:text-[11px] tracking-[0.12em] uppercase rounded-xl hover:bg-[#004a99] transition-colors shadow-lg shrink-0"
+            className="inline-flex items-center 
+            justify-center gap-2 self-start lg:self-auto px-6 py-3.5 bg-yellow-400 
+            text-black font-black text-[10px] md:text-[11px] tracking-[0.12em] uppercase 
+            hover:bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 transition-colors 
+            shadow-black/20 rounded-2xl shadow-[0_10px_20px_rgba(0,0,0,0.15),0_3px_6px_rgba(0,0,0,0.1)] transition-all
+             shrink-0 hover:scale-105 transition-transform duration-200"
           >
             Ver categoria completa
             <ExternalLink size={16} strokeWidth={2.5} />
@@ -58,7 +63,11 @@ function CategoryCarousel({ title, description, categoryUrl, slides, slideDelay 
 
           <div
             ref={scrollerRef}
-            className="min-w-0 flex-1 flex gap-4 md:gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory py-2 pb-4 [scrollbar-width:thin] [scrollbar-color:#cbd5e1_transparent]"
+            className="min-w-0 flex-1 flex gap-4 
+            md:gap-6 overflow-x-auto 
+            scroll-smooth snap-x snap-mandatory 
+            py-2 pb-4 [scrollbar-width:thin] 
+            [scrollbar-color:#cbd5e1_transparent]"
           >
             {slides.map((slide, idx) => (
               <motion.a
@@ -73,7 +82,10 @@ function CategoryCarousel({ title, description, categoryUrl, slides, slideDelay 
                 transition={{ delay: slideDelay + idx * 0.06, duration: 0.45 }}
                 className="snap-start shrink-0 w-[min(100%,260px)] sm:w-[280px] md:w-[300px] group/card"
               >
-                <article className="h-full flex flex-col rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-[0_20px_45px_-12px_rgba(0,51,102,0.2)] hover:border-[#004a99]/25 transition-all duration-500 hover:-translate-y-1">
+                <article className="h-full flex flex-col rounded-2xl 
+                border border-slate-200 bg-white overflow-hidden 
+                shadow-2x1 hover:shadow-[0_20px_45px_-12px_rgba(0,51,102,0.2)] 
+                hover:border-[#004a99]/25 transition-all duration-500 hover:-translate-y-1">
                   <div className="relative aspect-[4/3] w-full bg-slate-100">
                     {slide.image?.trim() ? (
                       <Image
@@ -152,27 +164,27 @@ const PNEUMATIC_SLIDES = [
   {
     title: 'Válvulas solenoides',
     blurb: 'Acionamento elétrico rápido para controle confiável do fluxo de ar em linha.',
-    image: '',
+    image: 'Valvula1.jpg',
   },
   {
     title: 'Válvulas piloto e auxiliares',
     blurb: 'Integração segura em circuitos que exigem comando proporcional e redundância.',
-    image: '',
+    image: 'Valvula2.jpg',
   },
   {
     title: 'Blocos e manifolds',
     blurb: 'Distribuição organizada do ar com instalação compacta e manutenção simplificada.',
-    image: '',
+    image: 'Valvula3.jpg',
   },
   {
     title: 'Conectividade e I/O',
     blurb: 'Prontas para integração com automação moderna e monitoramento de processo.',
-    image: '',
+    image: 'Valvula4.jpg',
   },
   {
     title: 'Acessórios pneumáticos',
     blurb: 'Complementos Parker para fechar o circuito com desempenho homogêneo.',
-    image: '',
+    image: 'Valvula6.png',
   },
 ];
 
@@ -180,27 +192,27 @@ const DIRECTIONAL_SLIDES = [
   {
     title: 'Válvulas 3/2 vias',
     blurb: 'Controle direto de cilindros simples e funções de avanço e retorno.',
-    image: '',
+    image: 'Direcional1.jpg',
   },
   {
     title: 'Válvulas 5/2 e 5/3 vias',
     blurb: 'Comando de atuadores de dupla ação com posições neutras quando necessário.',
-    image: '',
+    image: 'Direcional2.png',
   },
   {
     title: 'Ilhas válvulas',
     blurb: 'Concentração de válvulas direcionais para painéis e máquinas complexas.',
-    image: '',
+    image: 'Direcional3.png',
   },
   {
     title: 'Válvulas compactas',
     blurb: 'Onde o espaço é crítico, sem abrir mão de vazão e vida útil.',
-    image: '',
+    image: 'Direcional4.png',
   },
   {
     title: 'Válvulas de alto fluxo',
     blurb: 'Para aplicações que demandam resposta rápida e baixa queda de pressão.',
-    image: '',
+    image: 'Direcional5.jpeg',
   },
 ];
 
@@ -243,7 +255,7 @@ export default function ProductCarousels() {
       </div>
 
       <CategoryCarousel
-        title="1º carrossel — Válvulas pneumáticas"
+        title="Válvulas pneumáticas"
         description="Soluções para controle de ar e integração em sistemas industriais com a qualidade Parker."
         categoryUrl={URL_PNEUMATIC}
         slides={PNEUMATIC_SLIDES}
@@ -251,7 +263,7 @@ export default function ProductCarousels() {
       />
 
       <CategoryCarousel
-        title="2º carrossel — Válvulas direcionais"
+        title="Válvulas direcionais"
         description="Direcionamento preciso do fluxo para cilindros, atuadores e sequências de máquina."
         categoryUrl={URL_DIRECTIONAL}
         slides={DIRECTIONAL_SLIDES}
