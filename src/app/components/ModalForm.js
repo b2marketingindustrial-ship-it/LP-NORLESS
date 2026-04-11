@@ -81,7 +81,9 @@ export default function ModalForm({ isOpen, onClose }) {
             setsucessMsg(true);
             console.log(`Lead enviado com os dados de utm ${utmData}`, result);
 
-            const whatsMsg = `Olá, gostaria de falar com um especialista da Norless sobre válvulas pneumáticas Parker. Meu nome é ${formData.name} e estou interessado em ${formData.product}. Poderiam me ajudar?`;
+            const whatsMsg = `Olá, gostaria de falar com um especialista da Norless 
+            sobre válvulas pneumáticas Parker. Meu nome é ${formData.name} e estou 
+            interessado em ${formData.product}. Poderiam me ajudar?`;
 
             const whatsNumber = '11984471850';
 
@@ -126,8 +128,7 @@ export default function ModalForm({ isOpen, onClose }) {
                         <p className="text-white/90 text-sm mt-1">
                             <span className="text-orange-400 font-semibold">Norless</span>
                             <span className="text-white/80"> · </span>
-                            <span className="text-yellow-400">Válvulas pneumáticas Parker</span>
-                            <span className="text-white/80"> — retornamos pelo WhatsApp</span>
+                            <span className="text-yellow-400">Entre em contato</span>
                         </p>
                         <button
                             onClick={onClose}
