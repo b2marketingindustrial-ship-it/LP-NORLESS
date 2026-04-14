@@ -1,14 +1,13 @@
 'use client';
 import { useState } from 'react';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import ProductCarousels from './components/ProductCarousels';
-import WhyParker from './components/WhyParker';
-import Segments from './components/Segments';
-import Consultative from './components/Consultative';
-import WhyNorless from './components/WhyNorless';
-import FinalCTA from './components/FinalCTA';
-import Solution from './components/Solution';
+import Hero from './sections/Hero';
+import ProductCarousels from './sections/ProductCarousels';
+import WhyParker from './sections/WhyParker';
+import Segments from './sections/Segments';
+import Consultative from './sections/Consultative';
+import WhyNorless from './sections/WhyNorless';
+import FinalCTA from './sections/FinalCTA';
 import ModalForm from './components/ModalForm';
 import Footer from './components/Footer';
 import WhatsButton from './components/WhatsButton';
@@ -28,10 +27,9 @@ export default function Home() {
         <ProductCarousels />
         <WhyParker />
         <Segments />
-        <Consultative onOpenModal={openModal} />
+        <Consultative />
         <WhyNorless />
         <FinalCTA />
-        <Solution />
       </main>
 
       <Footer />

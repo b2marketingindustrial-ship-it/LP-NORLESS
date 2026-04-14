@@ -137,9 +137,12 @@ export default function ChatForm() {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl border flex flex-col h-[480px] overflow-hidden">
+    <div className="bg-white rounded-2xl 
+    shadow-xl border flex flex-col h-[480px] overflow-hidden">
+      {/* Chat Header */}
       <div className="bg-yellow-500 px-5 py-4 flex items-center gap-3">
-        <div className="w-9 h-9 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
+        <div className="w-9 h-9 rounded-full 
+        bg-yellow-400 flex items-center justify-center flex-shrink-0">
           <span className="text-black font-bold text-sm">N</span>
         </div>
         <div>
@@ -147,11 +150,12 @@ export default function ChatForm() {
           <p className="text-black text-xs font-medium">Responde em minutos</p>
         </div>
         <div className="ml-auto flex items-center gap-1.5">
-          <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
-          <span className="text-yellow-400 text-xs font-bold">Online</span>
+          <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+          <span className="text-green-800 text-xs font-bold">Online</span>
         </div>
       </div>
 
+      {/* Messages Area */}
       <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-slate-50">
         <AnimatePresence>
           {messages.map((msg, i) => (
@@ -163,19 +167,25 @@ export default function ChatForm() {
               className={`flex ${msg.from === "user" ? "justify-end" : "justify-start"}`}
             >
               {msg.from === "bot" && (
-                <div className="w-7 h-7 
-                rounded-full 
-                bg-yellow-400
-                flex items-center justify-center text-black text-xs font-bold mr-2">
+                <div className="
+                  w-7 h-7 rounded-full
+                  bg-yellow-400
+                  flex items-center justify-center
+                  text-black text-xs font-bold
+                  mr-2
+                ">
                   N
                 </div>
               )}
               <div
-                className={`max-w-[75%] px-4 py-2 rounded-2xl text-sm leading-relaxed ${
-                  msg.from === "user"
+                className={`
+                  max-w-[75%] px-4 py-2
+                  rounded-2xl text-sm leading-relaxed
+                  ${msg.from === "user"
                     ? "bg-yellow-400 text-black rounded-br-sm font-medium"
                     : "bg-white text-black shadow-sm border border-gray-200 rounded-bl-sm"
-                }`}
+                  }
+                `}
               >
                 {msg.text}
               </div>
@@ -184,11 +194,18 @@ export default function ChatForm() {
         </AnimatePresence>
       </div>
 
+      {/* Input Area */}
       {!submitted ? (
         <div className="p-3 bg-white border-t border-gray-200 flex gap-2">
           <input
             type="text"
-            className="flex-1 border border-gray-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 text-black placeholder-gray-400"
+            className="
+              flex-1 border border-gray-300
+              rounded-xl px-3 py-2
+              text-sm
+              focus:outline-none focus:ring-2 focus:ring-orange-400
+              text-black placeholder-gray-400
+            "
             value={currentInput}
             onChange={(e) => setCurrentInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
@@ -198,7 +215,12 @@ export default function ChatForm() {
             type="button"
             onClick={handleSend}
             disabled={!currentInput.trim()}
-            className="bg-orange-400 hover:bg-yellow-400 disabled:opacity-40 text-black rounded-xl px-4 py-2 transition-colors font-semibold text-sm"
+            className="
+              bg-orange-400 hover:bg-yellow-400
+              disabled:opacity-40
+              text-black rounded-xl px-4 py-2
+              transition-colors font-semibold text-sm
+            "
           >
             Enviar
           </button>

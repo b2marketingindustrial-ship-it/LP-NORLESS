@@ -4,6 +4,16 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Loader2, CheckCircle2 } from 'lucide-react';
 
 export default function Solution() {
+  const inputClass = `
+    w-full bg-slate-50
+    rounded-lg border-2 border-slate-100
+    px-4 py-3.5
+    text-sm text-slate-900
+    placeholder:text-slate-400
+    focus:outline-none focus:border-blue-500 focus:bg-white
+    transition-all duration-300
+    font-medium
+  `;
     const [formData, setFormData] = useState({
         name: '',
         company: '',
@@ -106,6 +116,7 @@ export default function Solution() {
 
     return (
         <section className="section-padding bg-slate-50 overflow-hidden" id="orcamento">
+            {/* Header Section */}
             <div className="container-custom text-center mb-12 md:mb-16">
                 <span className="text-yellow-400 font-black tracking-[0.4em] text-[10px] uppercase mb-4 block">
                     Orçamento personalizado
@@ -120,6 +131,7 @@ export default function Solution() {
                 </p>
             </div>
 
+            {/* Form Section */}
             <div className="container-custom max-w-2xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -145,6 +157,7 @@ export default function Solution() {
                             </motion.div>
                         ) : (
                             <>
+                                {/* Form Header */}
                                 <div className="mb-8">
                                     <h3 className="text-xl md:text-2xl font-black text-black uppercase tracking-tighter mb-2">Solicitar cotação</h3>
                                     <p className="text-neutral-900 text-xs font-bold uppercase tracking-widest leading-relaxed">
@@ -152,6 +165,7 @@ export default function Solution() {
                                     </p>
                                 </div>
 
+                                {/* Form Fields */}
                                 <form onSubmit={handleSubmit} className="space-y-4">
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div className="space-y-1.5">
@@ -162,7 +176,7 @@ export default function Solution() {
                                                 onChange={handleChange}
                                                 placeholder="Digite seu nome"
                                                 required
-                                                className="w-full bg-slate-50 rounded-lg border-2 border-slate-100 px-4 py-3.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-all duration-300 font-medium"
+                                                className={inputClass}
                                             />
                                         </div>
                                         <div className="space-y-1.5">
@@ -173,7 +187,7 @@ export default function Solution() {
                                                 onChange={handleChange}
                                                 placeholder="Sua empresa"
                                                 required
-                                                className="w-full bg-slate-50 rounded-lg border-2 border-slate-100 px-4 py-3.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-all duration-300 font-medium"
+                                                className={inputClass}
                                             />
                                         </div>
                                     </div>
@@ -186,7 +200,7 @@ export default function Solution() {
                                             onChange={handleChange}
                                             placeholder="Ex: Válvula direcional 5/2, ilha de válvulas..."
                                             required
-                                            className="w-full bg-slate-50 rounded-lg border-2 border-slate-100 px-4 py-3.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-all duration-300 font-medium"
+                                            className={inputClass}
                                         />
                                     </div>
 
@@ -200,7 +214,7 @@ export default function Solution() {
                                                 onChange={handleChange}
                                                 placeholder="seu@email.com"
                                                 required
-                                                className="w-full bg-slate-50 rounded-lg border-2 border-slate-100 px-4 py-3.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-all duration-300 font-medium"
+                                                className={inputClass}
                                             />
                                         </div>
                                         <div className="space-y-1.5">
@@ -211,16 +225,30 @@ export default function Solution() {
                                                 onChange={handleChange}
                                                 placeholder="(00) 00000-0000"
                                                 required
-                                                className="w-full bg-slate-50 rounded-lg border-2 border-slate-100 px-4 py-3.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-all duration-300 font-medium"
+                                                className={inputClass}
                                             />
                                         </div>
                                     </div>
 
+                                    {/* Submit Button */}
                                     <div className="pt-4">
                                         <button
                                             type="submit"
                                             disabled={loading}
-                                            className="w-full group relative flex items-center justify-center gap-3 px-8 py-4 md:py-5 bg-yellow-400 text-black font-black text-[12px] tracking-[0.12em] uppercase rounded-lg transition-all duration-300 hover:bg-orange-400 hover:text-black active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed shadow-lg"
+                                            className="
+                                              w-full group relative
+                                              flex items-center justify-center
+                                              gap-3 px-8 py-4 md:py-5
+                                              bg-yellow-400 text-black
+                                              font-black text-[12px]
+                                              tracking-[0.12em] uppercase
+                                              rounded-lg
+                                              transition-all duration-300
+                                              hover:bg-orange-400 hover:text-black
+                                              active:scale-[0.98]
+                                              disabled:opacity-70 disabled:cursor-not-allowed
+                                              shadow-lg
+                                            "
                                         >
                                             {loading ? (
                                                 <Loader2 className="w-5 h-5 animate-spin" />
@@ -236,6 +264,7 @@ export default function Solution() {
                                         {sucessMsg && <p className="text-center text-green-600 text-[10px] font-bold uppercase mt-3 tracking-wider">Sucesso! Redirecionando...</p>}
                                     </div>
 
+                                    {/* Privacy Note */}
                                     <p className="text-[9px] text-slate-400 text-center uppercase tracking-widest font-bold">
                                         Seus dados estão protegidos sob nossa política de privacidade.
                                     </p>

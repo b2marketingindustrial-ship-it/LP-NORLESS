@@ -1,5 +1,5 @@
 'use client';
-
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 
@@ -9,8 +9,29 @@ export default function FinalCTA() {
   };
 
   return (
-    <section className="section-padding bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(90vw,640px)] h-[min(90vw,640px)] bg-[#004a99]/5 rounded-full blur-3xl pointer-events-none" />
+    <section className="section-padding bg-gradient-to-b 
+    from-slate-50 to-white relative overflow-hidden">
+      <div className="flex items-center justify-center gap-10 mb-10 sm:flex-row flex-col">
+        <Image
+          src="/norlessLogo.jpg"
+          alt="logo norless"
+          width={300}
+          height={120}
+          className="object-contain h-14 md:h-16 w-auto"
+        />
+          
+
+        <Image
+          src="/parkerstore.png"
+          alt="parker"
+          width={220}
+          height={100}
+          className="object-contain h-14 md:h-16 w-auto"
+        />
+      </div>
+
+      <div className="absolute top-1/2 
+      left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(90vw,640px)] h-[min(90vw,640px)] bg-[#004a99]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

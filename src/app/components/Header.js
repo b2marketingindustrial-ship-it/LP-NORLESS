@@ -10,9 +10,8 @@ export default function Header({ onOpenModal }) {
     w-full z-[80] bg-white/90 
     backdrop-blur-lg border-b 
     border-slate-100 shadow-md">
-      <div className="container-custom 
-      h-20 flex items-center 
-      justify-between">
+      <div className="container-custom h-20 flex 
+      items-center justify-between flex-row md:flex-row">
         {/* Logo */}
         <Link href="#hero">
         <Image
@@ -20,9 +19,17 @@ export default function Header({ onOpenModal }) {
           alt="Norless"
           width={100}
           height={100}
-          className="w-[200px] md:w-[240px] h-auto"
+          className="w-[120px] md:w-[240px] h-auto"
         />
         </Link>
+        
+        <Image
+          src="/parkerstore.png"
+          alt="Parker Store"
+          width={100}
+          height={100}
+          className="w-[90px] md:w-[200px] h-auto object-contain"
+        />
         
 
         {/* Contact info - Desktop */}

@@ -22,52 +22,66 @@ function CategoryCarousel({ title, description, categoryUrl, slides, slideDelay 
 
   return (
     <div className="mb-20 md:mb-28 last:mb-0">
+      {/* Header Section */}
       <div className="container-custom mb-8 md:mb-10">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+        <div className="flex flex-col gap-6 items-center text-center">
           <div className="max-w-2xl">
-            <h3 className="text-2xl md:text-4xl font-black text-black uppercase tracking-tighter leading-tight">
+            <h3 className="
+              text-2xl md:text-4xl
+              font-black text-black
+              uppercase tracking-tighter
+              leading-tight
+            ">
               {title}
             </h3>
-            <p className="text-xs md:text-sm text-neutral-900 font-bold uppercase tracking-wide mt-4 leading-relaxed">
+            <p className="
+              text-xs md:text-sm
+              text-neutral-900
+              font-bold uppercase
+              tracking-wide mt-4
+              leading-relaxed
+            ">
               {description}
             </p>
           </div>
-          <a
-            href={categoryUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center 
-            justify-center gap-2 self-start lg:self-auto px-6 py-3.5 bg-yellow-400 
-            text-black font-black text-[10px] md:text-[11px] tracking-[0.12em] uppercase 
-            hover:bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 transition-colors 
-            shadow-black/20 rounded-2xl shadow-[0_10px_20px_rgba(0,0,0,0.15),0_3px_6px_rgba(0,0,0,0.1)] transition-all
-             shrink-0 hover:scale-105 transition-transform duration-200"
-          >
-            Ver categoria completa
-            <ExternalLink size={16} strokeWidth={2.5} />
-          </a>
         </div>
       </div>
 
-      {/* Setas fora da faixa de scroll — não sobrepõem os cards */}
+      {/* Carousel Section */}
       <div className="container-custom">
+        {/* Navigation Buttons */}
         <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
           <button
             type="button"
             aria-label="Slide anterior"
             onClick={() => scrollByDir(-1)}
-            className="hidden sm:flex shrink-0 h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-full bg-white text-black shadow-md border border-slate-200 hover:bg-yellow-400 hover:border-yellow-400 transition-colors z-10"
+            className="
+              hidden sm:flex shrink-0
+              h-11 w-11
+              md:h-12 md:w-12
+              items-center justify-center
+              rounded-full
+              bg-white text-black
+              shadow-md
+              border border-slate-200
+              hover:bg-yellow-400 hover:border-yellow-400
+              transition-colors z-10
+            "
           >
             <ChevronLeft size={22} strokeWidth={2.5} className="-ml-0.5 text-orange-400" />
           </button>
 
           <div
             ref={scrollerRef}
-            className="min-w-0 flex-1 flex gap-4 
-            md:gap-6 overflow-x-auto 
-            scroll-smooth snap-x snap-mandatory 
-            py-2 pb-4 [scrollbar-width:thin] 
-            [scrollbar-color:#cbd5e1_transparent]"
+            className="
+              min-w-0 flex-1 flex
+              gap-4 md:gap-6
+              overflow-x-auto scroll-smooth
+              snap-x snap-mandatory
+              py-2 pb-4
+              [scrollbar-width:thin]
+              [scrollbar-color:#cbd5e1_transparent]
+            "
           >
             {slides.map((slide, idx) => (
               <motion.a
@@ -80,12 +94,23 @@ function CategoryCarousel({ title, description, categoryUrl, slides, slideDelay 
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: slideDelay + idx * 0.06, duration: 0.45 }}
-                className="snap-start shrink-0 w-[min(100%,260px)] sm:w-[280px] md:w-[300px] group/card"
+                className="
+                  snap-start shrink-0
+                  w-[min(100%,260px)] sm:w-[280px] md:w-[300px]
+                  group/card
+                "
               >
-                <article className="h-full flex flex-col rounded-2xl 
-                border border-slate-200 bg-white overflow-hidden 
-                shadow-2x1 hover:shadow-[0_20px_45px_-12px_rgba(0,51,102,0.2)] 
-                hover:border-[#004a99]/25 transition-all duration-500 hover:-translate-y-1">
+                <article className="
+                  h-full flex flex-col
+                  rounded-2xl
+                  border border-slate-200
+                  bg-white overflow-hidden
+                  shadow-2x1
+                  hover:shadow-[0_20px_45px_-12px_rgba(0,51,102,0.2)]
+                  hover:border-[#004a99]/25
+                  transition-all duration-500
+                  hover:-translate-y-1
+                ">
                   <div className="relative aspect-[4/3] w-full bg-slate-100">
                     {slide.image?.trim() ? (
                       <Image
@@ -97,10 +122,18 @@ function CategoryCarousel({ title, description, categoryUrl, slides, slideDelay 
                       />
                     ) : (
                       <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 p-4 bg-gradient-to-br from-slate-100 via-slate-50 to-slate-200/80">
-                        <span className="text-[9px] font-black text-orange-400 uppercase tracking-[0.2em] text-center">
+                        <span className="
+                          text-[9px] font-black
+                          text-orange-400 uppercase
+                          tracking-[0.2em] text-center
+                        ">
                           Slot de imagem
                         </span>
-                        <span className="text-[10px] font-bold text-black/70 text-center leading-snug px-2">
+                        <span className="
+                          text-[10px] font-bold
+                          text-black/70 text-center
+                          leading-snug px-2
+                        ">
                           Coloque o arquivo em{' '}
                           <code className="text-orange-400 bg-white/90 px-1 rounded font-black">public/</code> e defina{' '}
                           <code className="text-yellow-500 bg-white/90 px-1 rounded font-black">image</code> no slide
@@ -112,13 +145,28 @@ function CategoryCarousel({ title, description, categoryUrl, slides, slideDelay 
                     </div>
                   </div>
                   <div className="p-5 flex flex-col flex-1">
-                    <h4 className="text-sm font-black text-black uppercase tracking-tight mb-2 leading-snug">
+                    <h4 className="
+                      text-sm font-black
+                      text-black uppercase
+                      tracking-tight mb-2
+                      leading-snug
+                    ">
                       {slide.title}
                     </h4>
-                    <p className="text-[11px] text-neutral-900 font-bold uppercase tracking-wide leading-relaxed flex-1">
+                    <p className="
+                      text-[11px] text-neutral-900
+                      font-bold uppercase
+                      tracking-wide leading-relaxed
+                      flex-1
+                    ">
                       {slide.blurb}
                     </p>
-                    <div className="mt-4 h-1 w-8 rounded-full bg-[#ffd700] group-hover/card:w-full transition-all duration-500" />
+                    <div className="
+                      mt-4 h-1 w-8
+                      rounded-full bg-[#ffd700]
+                      group-hover/card:w-full
+                      transition-all duration-500
+                    " />
                   </div>
                 </article>
               </motion.a>
@@ -129,19 +177,37 @@ function CategoryCarousel({ title, description, categoryUrl, slides, slideDelay 
             type="button"
             aria-label="Próximo slide"
             onClick={() => scrollByDir(1)}
-            className="hidden sm:flex shrink-0 h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-full bg-white text-black shadow-md border border-slate-200 hover:bg-yellow-400 hover:border-yellow-400 transition-colors z-10"
+            className="
+              hidden sm:flex shrink-0
+              h-11 w-11
+              md:h-12 md:w-12
+              items-center justify-center
+              rounded-full
+              bg-white text-black
+              shadow-md
+              border border-slate-200
+              hover:bg-yellow-400 hover:border-yellow-400
+              transition-colors z-10
+            "
           >
             <ChevronRight size={22} strokeWidth={2.5} className="-mr-0.5 text-orange-400" />
           </button>
         </div>
 
-        {/* Mobile: setas compactas abaixo do carrossel para não cobrir cards */}
+        {/* Mobile Navigation */}
         <div className="flex sm:hidden justify-center gap-6 mt-2">
           <button
             type="button"
             aria-label="Slide anterior"
             onClick={() => scrollByDir(-1)}
-            className="h-10 w-10 flex items-center justify-center rounded-full bg-white shadow border border-slate-200 text-orange-400"
+            className="
+              h-10 w-10
+              flex items-center justify-center
+              rounded-full
+              bg-white shadow
+              border border-slate-200
+              text-orange-400
+            "
           >
             <ChevronLeft size={20} strokeWidth={2.5} />
           </button>
@@ -149,7 +215,14 @@ function CategoryCarousel({ title, description, categoryUrl, slides, slideDelay 
             type="button"
             aria-label="Próximo slide"
             onClick={() => scrollByDir(1)}
-            className="h-10 w-10 flex items-center justify-center rounded-full bg-white shadow border border-slate-200 text-orange-400"
+            className="
+              h-10 w-10
+              flex items-center justify-center
+              rounded-full
+              bg-white shadow
+              border border-slate-200
+              text-orange-400
+            "
           >
             <ChevronRight size={20} strokeWidth={2.5} />
           </button>
@@ -224,12 +297,17 @@ const URL_DIRECTIONAL =
 export default function ProductCarousels() {
   return (
     <section id="produtos" className="section-padding bg-slate-50 overflow-hidden">
+      {/* Header Section */}
       <div className="container-custom text-center mb-14 md:mb-20">
         <motion.span
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-orange-400 font-black tracking-[0.4em] text-[10px] uppercase mb-4 block"
+          className="
+            text-orange-400 font-black
+            tracking-[0.4em] text-[10px]
+            uppercase mb-4 block
+          "
         >
           Nossa linha de produtos
         </motion.span>
@@ -238,7 +316,14 @@ export default function ProductCarousels() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.05 }}
-          className="text-3xl md:text-5xl font-black text-black mb-6 uppercase tracking-tighter max-w-4xl mx-auto leading-[1.1]"
+          className="
+            text-3xl md:text-5xl
+            font-black text-black
+            mb-6 uppercase
+            tracking-tighter
+            max-w-4xl mx-auto
+            leading-[1.1]
+          "
         >
           Principais linhas <span className="text-yellow-400 font-black">Parker</span> para sua automação
         </motion.h2>
@@ -247,13 +332,20 @@ export default function ProductCarousels() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-sm md:text-[13px] text-neutral-900 max-w-2xl mx-auto font-bold uppercase tracking-wide leading-relaxed"
+          className="
+            text-sm md:text-[13px]
+            text-neutral-900
+            max-w-2xl mx-auto
+            font-bold uppercase
+            tracking-wide leading-relaxed
+          "
         >
           Apresentamos as principais válvulas pneumáticas Parker para sua automação industrial. Navegue pelos
           carrosséis e acesse as categorias completas na Fluid Center.
         </motion.p>
       </div>
 
+      {/* Carousels Section */}
       <CategoryCarousel
         title="Válvulas pneumáticas"
         description="Soluções para controle de ar e integração em sistemas industriais com a qualidade Parker."
